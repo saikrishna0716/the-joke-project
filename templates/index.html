@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Jokes Website</title>
+</head>
+<body>
+    <header>
+        <h1>Joke of the Day</h1>
+        <p id="joke-of-the-day">{{ joke_of_the_day['joke_description'] }}</p>
+    </header>
+    
+    <main>
+        <section>
+            <h2>Search Jokes</h2>
+            <input type="text" id="search-input" placeholder="Enter keyword">
+            <button onclick="searchJokes()">Search</button>
+        </section>
+
+        <!-- Added link to the "All Jokes" page -->
+        <section>
+            <h2>Explore Jokes</h2>
+            <a href="{{ url_for('all_jokes') }}">View All Jokes</a>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

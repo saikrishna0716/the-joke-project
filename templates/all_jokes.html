@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ... (unchanged) ... -->
+</head>
+<body>
+    <header>
+        <h1>All Jokes</h1>
+    </header>
+    
+    <main>
+        <section>
+            <h2>List of Jokes</h2>
+            <ul id="all-jokes">
+                {% for joke in all_jokes %}
+                    <li><a href="{{ url_for('individual_joke', joke_id=loop.index0) }}">{{ joke['joke_description'][:20] }}...</a></li>
+                {% endfor %}
+            </ul>
+        </section>
+    </main>
+
+    <!-- ... (unchanged) ... -->
+</body>
+</html>
